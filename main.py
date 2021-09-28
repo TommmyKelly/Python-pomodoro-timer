@@ -19,6 +19,7 @@ Timer = None
 def reset():
     global REPS, Timer
     REPS = 0
+    start_button["state"] = NORMAL
     window.after_cancel(Timer)
     check_marks.config(text="")
     canvas.itemconfig(timer_text, text="00:00")
@@ -29,6 +30,7 @@ def reset():
 def start_timer():
     global REPS
     REPS += 1
+    start_button["state"] = DISABLED
     work_sec = WORK_MIN * 60
     short_break_sec = SHORT_BREAK_MIN * 60
     long_break_sec = LONG_BREAK_MIN * 60
